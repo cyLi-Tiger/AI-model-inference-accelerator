@@ -1,0 +1,20 @@
+name: "my_model"
+platform: "onnxruntime_onnx"
+max_batch_size : 16
+input [
+  {
+    name: "modelInput"
+    data_type: TYPE_FP32
+    format: FORMAT_NCHW
+    dims: [ 3, 32, 32 ]
+  }
+]
+output [
+  {
+    name: "modelOutput"
+    data_type: TYPE_FP32
+    dims: [ 10 ]
+
+    label_filename: "resnet_lables.txt"
+  }
+]
